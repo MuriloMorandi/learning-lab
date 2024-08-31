@@ -1,0 +1,14 @@
+#  node_modules directory
+node_modules
+
+# build output directories
+dist
+build
+
+# environment variable files
+.env
+.env.local
+
+# Ignore IDE files (e.g., VSCode, IntelliJ, etc.)
+.vscode
+idea
