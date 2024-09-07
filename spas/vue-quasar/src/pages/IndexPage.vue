@@ -1,6 +1,5 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    
     <q-table
       :rows="todos"
       :columns="columns"
@@ -24,20 +23,18 @@
         />
       </template>
     </q-table>
-
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import { Todo, Meta } from 'components/models';
-import { api } from 'src/boot/axios';
-import { QTableColumn } from 'quasar';
-
+import { onMounted, ref } from 'vue'
+import { Todo } from 'components/models'
+import { api } from 'src/boot/axios'
+import { QTableColumn } from 'quasar'
 
 defineOptions({
   name: 'IndexPage'
-});
+})
 
 const columns: QTableColumn[] = [
   {
@@ -60,18 +57,17 @@ const columns: QTableColumn[] = [
 
 const visibleColumns = ref(
   columns.filter((column) => !column.required).map((column) => column.name)
-);
+)
 
-const todos = ref<Todo[]>([]);
+const todos = ref<Todo[]>([])
 
 const refresh = () => {
   api.get('/todos').then((response) => {
-    todos.value = response.data;
-  });
+    todos.value = response.data
+  })
 }
 
 onMounted(() => {
-  refresh();
+  refresh()
 })
-
 </script>
