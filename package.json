@@ -4,10 +4,18 @@
   "author": "Murilo Morandi Alexandre",
   "license": "MIT",
   "scripts": {
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "commit": "git cz"
   },
   "devDependencies": {
+    "commitizen": "^4.3.0",
     "turbo": "^2.1.1"
   },
-  "packageManager": "pnpm@9.6.0"
+  "packageManager": "pnpm@9.6.0",
+  "config": {
+    "commitizen": {
+      "path": "./cz.js"
+    }
+  }
 }
