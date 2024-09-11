@@ -35,6 +35,10 @@ module.exports = {
                 name: 'chore: Atualizações em tarefas de build ou configurações',
                 value: ':wrench: chore'
             },
+            {
+                name: 'docs: Atualização de README, CHANGELOG, etc',
+                value: ':books: docs:'
+            }
         ]
     },
     {
@@ -53,6 +57,10 @@ module.exports = {
             {
                 name: 'learning-lab: Alterações no projeto raiz (learning-lab)',
                 value: 'learning-lab'
+            },
+            {
+                name: 'empty: Alterações que não se encaixam em nenhum escopo específico',
+                value: ''
             }
         ]  
     },
