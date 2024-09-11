@@ -38,6 +38,10 @@ module.exports = {
             {
                 name: 'docs: Atualização de README, CHANGELOG, etc',
                 value: ':books: docs:'
+            },
+            {
+                name: 'new package: Criação de um novo projeto',
+                value: ':package: new package'
             }
         ]
     },
