@@ -1,0 +1,37 @@
+name: test-packages
+
+on:
+    push:
+        paths: ['packages/**']
+
+jobs:
+  install-build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Checar o código do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Passo 2: Instalar o Node.js (especifica a versão que você está usando)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.13.1'
+          cache: 'pnpm'       # Habilita o cache para o PNPM
+
+      # Passo 3: Instalar o PNPM
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # Passo 4: Instalar as dependências usando PNPM
+      - name: Install dependencies
+        run: pnpm install
+
+      # Passo 5: Build do projeto
+      - name: Build project
+        run: pnpm run build
+
+      # Passo 6: Executar testes
+      - name: Run tests
+        run: pnpm run test
