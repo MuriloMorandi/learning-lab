@@ -43,6 +43,11 @@ module.exports = {
                 name: 'new package: Criação de um novo projeto',
                 value: ':package: new package'
             }
+            ,
+            {
+                name: 'CI: Mudanças em configurações de CI',
+                value: ':bricks: CI '
+            }
         ]
     },
     {
