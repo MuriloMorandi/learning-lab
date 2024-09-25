@@ -21,9 +21,9 @@ jobs:
 
       # Passo 3: Setup do PNPM
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4.0.0
+        uses: pnpm/action-setup@v2.2.4
         with:
-          version: 9.6.0  # Versão que deseja utilizar do pnpm
+          version: '9.6.0'  # Versão que deseja utilizar do pnpm
 
       # Passo 4: Instalar as dependências usando PNPM
       - name: Install dependencies
@@ -31,8 +31,8 @@ jobs:
 
       # Passo 5: Build do projeto
       - name: Build project
-        run: pnpm run build --filter=packages/... 
+        run: pnpm run build --filter=@learning-lab/database --filter=@learning-lab/utils 
 
       # Passo 6: Executar testes
       - name: Run tests
-        run: pnpm run test  --filter=packages/...
+        run: pnpm run test  --filter=@learning-lab/database --filter=@learning-lab/utils
