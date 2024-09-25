@@ -1,8 +1,8 @@
 name: test-packages
 
 on:
-  push:
-    paths: ['packages/**']
+  push
+    #paths: ['packages/**']
 
 jobs:
   install-build-test:
