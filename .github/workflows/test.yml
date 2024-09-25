@@ -1,8 +1,8 @@
 name: test-packages
 
 on:
-    push:
-        paths: ['packages/**']
+  push:
+    paths: ['packages/**']
 
 jobs:
   install-build-test:
@@ -19,9 +19,11 @@ jobs:
         with:
           node-version: '20.13.1'
 
-      # Passo 3: Instalar o PNPM
-      - name: Install pnpm
-        run: npm install -g pnpm
+      # Passo 3: Setup do PNPM
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 9.6.0  # Versão que deseja utilizar do pnpm
 
       # Passo 4: Instalar as dependências usando PNPM
       - name: Install dependencies
@@ -29,8 +31,8 @@ jobs:
 
       # Passo 5: Build do projeto
       - name: Build project
-        run: pnpm run build
+        run: pnpm run build --filter=packages/... 
 
       # Passo 6: Executar testes
       - name: Run tests
-        run: pnpm run test
+        run: pnpm run test  --filter=packages/...
