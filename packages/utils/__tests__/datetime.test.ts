@@ -20,7 +20,7 @@ describe('Formatação ISO', () => {
     const dateStr = '2024-01-01';
       const result = parseDate(dateStr);
       console.log(result);
-    expect(result.toISOString()).toBe('2024-01-01T03:00:00.000Z');
+    expect(result.toISOString()).toBe('2024-01-01T00:00:00.000-03:00');
   });
 
 });
