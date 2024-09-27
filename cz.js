@@ -64,6 +64,10 @@ module.exports = {
                 value: 'database'
             },
             {
+                name: 'utils: Alterações no projeto utils',
+                value: 'utils'
+            },
+            {
                 name: 'learning-lab: Alterações no projeto raiz (learning-lab)',
                 value: 'learning-lab'
             },
