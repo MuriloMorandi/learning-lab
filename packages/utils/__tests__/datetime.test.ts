@@ -13,13 +13,14 @@ describe('Formatação ISO', () => {
     const dateStr = '2023-09-18T12:00:00Z';
     const result = parseDate(dateStr);
     expect(result).toBeInstanceOf(Date);
-    expect(result.toISOString()).toBe('2023-09-18T12:00:00.000Z');
+    expect(result.toISOString()).toBe('2023-09-18T09:00:00.000-03:00');
     });
 
     it('deve lidar com diferentes formatos ISO', () => {
     const dateStr = '2024-01-01';
-    const result = parseDate(dateStr);
-    expect(result.toISOString()).toBe('2024-01-01T03:00:00.000Z');
+      const result = parseDate(dateStr);
+      console.log(result);
+    expect(result.toISOString()).toBe('2024-01-01T00:00:00.000-03:00');
   });
 
 });

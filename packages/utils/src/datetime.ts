@@ -3,7 +3,9 @@ import { tz } from "@date-fns/tz";
 
 
 export function parseDate(date: string): Date {
-  return parseISO(date);
+  return parseISO(date, {
+    in: tz('America/Sao_Paulo')
+  });
 }
 
 export function formatDate(date: Date | string): string {
